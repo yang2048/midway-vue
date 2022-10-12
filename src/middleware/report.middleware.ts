@@ -13,6 +13,7 @@ export class ReportMiddleware implements IMiddleware<Context, NextFunction> {
       const result = await next()
       // 控制器之后执行的逻辑
       // console.log(Date.now() - startTime);
+
       ctx.logger.info(result)
       ctx.logger.debug('debug info')
       ctx.logger.warn('WARNNING!!!!')

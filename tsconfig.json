@@ -8,7 +8,6 @@
     "emitDecoratorMetadata": true,
     "inlineSourceMap": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
     "stripInternal": true,
     "skipLibCheck": true,
     "pretty": true,
@@ -16,6 +15,8 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "strictPropertyInitialization": false,
     "typeRoots": [
       "./typings",
       "./node_modules/@types"

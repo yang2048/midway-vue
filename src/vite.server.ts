@@ -1,5 +1,3 @@
-/* eslint-disable node/no-unpublished-require  */
-/* eslint-disable node/no-unpublished-import  */
 import { Readable } from 'stream'
 import { Application, Context } from '@midwayjs/koa'
 import koaConnect from 'koa-connect'
