@@ -22,7 +22,7 @@ export default defineConfig((/* { mode, command } */) => {
   ]
 
   return {
-    root: 'web',
+    root: 'view',
     resolve: {
       alias: {
         '~': resolve(__dirname, '../'),
@@ -38,6 +38,9 @@ export default defineConfig((/* { mode, command } */) => {
           rewrite: path => path.replace(/^\/api/, ''),
         },
       },
+    },
+    ssr: {
+      format: 'cjs'
     },
     plugins,
   }

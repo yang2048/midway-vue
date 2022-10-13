@@ -14,9 +14,9 @@ export class ReportMiddleware implements IMiddleware<Context, NextFunction> {
       // 控制器之后执行的逻辑
       // console.log(Date.now() - startTime);
 
-      ctx.logger.info(result)
+      // ctx.logger.info(result)
       ctx.logger.debug('debug info')
-      ctx.logger.warn('WARNNING!!!!')
+      // ctx.logger.warn('WARNNING!!!!')
       // 返回给上一个中间件的结果
       return result
     }

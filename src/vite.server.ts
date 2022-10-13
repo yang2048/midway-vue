@@ -23,7 +23,7 @@ let viteServer: vite.ViteDevServer
 export async function createViteServer(app: Application) {
   viteServer = !viteServer
     ? await vite.createServer({
-        root: 'web',
+      root: 'view',
         logLevel: 'error',
         server: {
           middlewareMode: true,
@@ -68,7 +68,7 @@ export async function renderDev(
   isStream = false
 ) {
   try {
-    let template = fs.readFileSync(resolve('../web/index.html'), 'utf-8')
+    let template = fs.readFileSync(resolve('../view/index.html'), 'utf-8')
     template = await viteServer.transformIndexHtml(ctx.originalUrl, template)
     const { render } = await viteServer.ssrLoadModule('/entry-server.ts')
     const [readableHtml, preloadLinks, meta, state] = await render(

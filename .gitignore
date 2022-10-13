@@ -19,3 +19,5 @@ src/config/config.prod.ts
 *.un~
 .tsbuildinfo
 .tsbuildinfo.*
+auto-imports.d.ts
+components.d.ts
