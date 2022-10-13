@@ -1,6 +1,7 @@
 installDevDependencies: true
-install:
-  - echo 'building'
-  - npm install
-build: npm run build
-run: npm run start
+# install:
+#   - echo 'building'
+#   - npm install -g @midwayjs/cli
+#   - npm install
+# build: npm run build
+# run: npm run start
