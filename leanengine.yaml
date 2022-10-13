@@ -1,7 +1,6 @@
 installDevDependencies: true
 install:
   - echo 'building'
-  - npm install -g @vue/cli
   - npm install
 build: npm run build
 run: npm run start
