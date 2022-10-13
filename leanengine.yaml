@@ -1,6 +1,5 @@
 systemDependencies:
   - midway-bin
-  - @midwayjs/cli
 installDevDependencies: true
 install: npm install
 build: npm run build
