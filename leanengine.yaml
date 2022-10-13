@@ -1,5 +1,7 @@
-install: npm install --production
+installDevDependencies: true
+install:
+  - echo 'building'
+  - npm install -g @vue/cli
+  - npm install
 build: npm run build
-prune: npm prune --production  
-#run: $(npm bin)/serve -c static.json -l ${LEANCLOUD_APP_PORT}
 run: npm run start
