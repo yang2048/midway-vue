@@ -1,7 +1,6 @@
 installDevDependencies: true
 install:
   - echo 'building'
-  - yarn install -g @midwayjs/cli
   - yarn install
 build: yarn run build
 run: yarn run start
