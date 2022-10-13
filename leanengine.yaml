@@ -1,7 +1,4 @@
-systemDependencies:
-  - midway-bin
-installDevDependencies: true
-install: npm install && npm install @midwayjs/cli -g
+install: npm install --production
 build: npm run build
 prune: npm prune --production  
 #run: $(npm bin)/serve -c static.json -l ${LEANCLOUD_APP_PORT}
