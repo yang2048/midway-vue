@@ -10,3 +10,4 @@ build:
     - build/
     - dist/
   - yarn run build
+run: yarn run start
