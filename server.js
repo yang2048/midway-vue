@@ -2,13 +2,13 @@
 
 var AV = require('leanengine');
 
-AV.init({
-    appId: process.env.LEANCLOUD_APP_ID,
-    appKey: process.env.LEANCLOUD_APP_KEY,
-    masterKey: process.env.LEANCLOUD_APP_MASTER_KEY
-});
-// 如果不希望使用 masterKey 权限，可以删除
-AV.Cloud.useMasterKey();
+// AV.init({
+//     appId: process.env.LEANCLOUD_APP_ID,
+//     appKey: process.env.LEANCLOUD_APP_KEY,
+//     masterKey: process.env.LEANCLOUD_APP_MASTER_KEY
+// });
+// // 如果不希望使用 masterKey 权限，可以删除
+// AV.Cloud.useMasterKey();
 
 const cfork = require('cfork');
 const util = require('util');
@@ -21,7 +21,7 @@ console.info('端口：' + process.env.LEANCLOUD_APP_PORT || process.env.PORT ||
 
 cfork({
     exec: path.join(__dirname, './bootstrap.js'),
-    count: 1,
+    count: 0.5,
 })
     .on('fork', (worker) => {
         console.warn('[%s] [worker:%d] new worker start', Date(), worker.process.pid);

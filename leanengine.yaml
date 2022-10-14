@@ -1,6 +1,18 @@
-installDevDependencies: true
+# installDevDependencies: true
 # install:
 #   - echo 'building'
 #   - yarn install
-build: yarn run build
-run: yarn run start
+build: 
+  - require:
+      - build/
+      - dist/
+  - { use: "default" }
+  - { use: "midway-bin" }
+  - yarn run build
+run: 
+  - require:
+      - build/
+      - dist/
+  - { use: "default" }
+  - { use: "midway-bin" }
+  - yarn run start
