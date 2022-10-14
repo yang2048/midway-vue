@@ -1,11 +1,12 @@
 installDevDependencies: true
-# install:
-#   - echo 'building'
-#   - yarn install
+exposeEnvironmentsOnBuild: true
+install: 
+  - use: default
+  - require:
+    - ./package.json
+  - yarn
 build: 
   - require:
       - build/
       - dist/
-  - { use: "default" }
   - yarn run build
-run: yarn run start

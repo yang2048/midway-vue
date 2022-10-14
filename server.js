@@ -12,12 +12,24 @@ var AV = require('leanengine');
 
 const cfork = require('cfork');
 const util = require('util');
+const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
 // 获取 cpu 核数
 const cpuNumbers = os.cpus().length;
 console.info('端口：' + process.env.LEANCLOUD_APP_PORT || process.env.PORT || 7001)
+
+const filePath = path.resolve('./build');
+//根据文件路径读取文件，返回文件列表
+fs.readdir(filePath, function (err, files) {
+    if (err) return console.error('Error:(spec)', err)
+    files.forEach((filename) => {
+        //获取当前文件的绝对路径
+        const filedir = path.join(filePath, filename);
+        console.log(filedir)
+    });
+});
 
 cfork({
     exec: path.join(__dirname, './bootstrap.js'),
