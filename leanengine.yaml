@@ -1,4 +1,4 @@
-# installDevDependencies: true
+installDevDependencies: true
 # install:
 #   - echo 'building'
 #   - yarn install
