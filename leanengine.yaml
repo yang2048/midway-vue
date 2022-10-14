@@ -7,6 +7,6 @@ install:
   - yarn
 build: 
   - require:
-      - build/
-      - dist/
+    - build/
+    - dist/
   - yarn run build
