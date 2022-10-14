@@ -1,4 +1,4 @@
-# installDevDependencies: true
+installDevDependencies: true
 # install:
 #   - echo 'building'
 #   - yarn install
@@ -7,6 +7,5 @@ build:
       - build/
       - dist/
   - { use: "default" }
-  - { use: "midway-bin" }
   - yarn run build
 run: yarn run start
