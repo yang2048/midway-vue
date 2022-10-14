@@ -9,10 +9,4 @@ build:
   - { use: "default" }
   - { use: "midway-bin" }
   - yarn run build
-run: 
-  - require:
-      - build/
-      - dist/
-  - { use: "default" }
-  - { use: "midway-bin" }
-  - yarn run start
+run: yarn run start
