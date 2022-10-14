@@ -17,10 +17,11 @@ const os = require('os');
 
 // 获取 cpu 核数
 const cpuNumbers = os.cpus().length;
+console.info('端口：' + process.env.LEANCLOUD_APP_PORT || process.env.PORT || 7001)
 
 cfork({
     exec: path.join(__dirname, './bootstrap.js'),
-    count: cpuNumbers,
+    count: 1,
 })
     .on('fork', (worker) => {
         console.warn('[%s] [worker:%d] new worker start', Date(), worker.process.pid);
