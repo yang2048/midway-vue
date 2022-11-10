@@ -17,6 +17,9 @@ const tableData = computed<IAboutState>(() => aboutStore.$state);
 
 const route = useRoute();
 const page = computed(() => route.query.page);
+const updatePage = (page: number) => {
+  console.info(page)
+}
 
 watch(page, () => {
   if (route.path !== '/about') {
@@ -45,8 +48,10 @@ watch(page, () => {
         </n-spin>
       </n-space>
       <div>
+        <n-pagination :page="1" :page-count="100" />
         <pagination :total="tableData.pagination.total" :current-page="tableData.pagination.current"
           page-url="/about?page={page}"></pagination>
+          
       </div>
     </div>
   </div>

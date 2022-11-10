@@ -1,15 +1,5 @@
 'use strict';
 
-var AV = require('leanengine');
-
-// AV.init({
-//     appId: process.env.LEANCLOUD_APP_ID,
-//     appKey: process.env.LEANCLOUD_APP_KEY,
-//     masterKey: process.env.LEANCLOUD_APP_MASTER_KEY
-// });
-// // 如果不希望使用 masterKey 权限，可以删除
-// AV.Cloud.useMasterKey();
-
 const cfork = require('cfork');
 const util = require('util');
 const fs = require('fs');
@@ -18,7 +8,8 @@ const os = require('os');
 
 // 获取 cpu 核数
 const cpuNumbers = os.cpus().length;
-console.info('端口：' + process.env.LEANCLOUD_APP_PORT || process.env.PORT || 7001)
+console.info('cpu核数：' + cpuNumbers)
+console.info('端口：' + process.env.PORT)
 
 const filePath = path.resolve('./build');
 //根据文件路径读取文件，返回文件列表
@@ -33,7 +24,7 @@ fs.readdir(filePath, function (err, files) {
 
 cfork({
     exec: path.join(__dirname, './bootstrap.js'),
-    count: 0.5,
+    count: cpuNumbers,
 })
     .on('fork', (worker) => {
         console.warn('[%s] [worker:%d] new worker start', Date(), worker.process.pid);
